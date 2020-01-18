@@ -1,4 +1,4 @@
-# FilmSearch
+# FilmSearch [![Build Status](https://dev.azure.com/blazewskileszek/FilmSearch/_apis/build/status/LeszekBlazewski.FilmSearch?branchName=master)](https://dev.azure.com/blazewskileszek/FilmSearch/_build/latest?definitionId=16&branchName=master)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
