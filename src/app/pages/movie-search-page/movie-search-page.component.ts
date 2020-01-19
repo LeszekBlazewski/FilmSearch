@@ -7,16 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieSearchPageComponent implements OnInit {
 
-  //movie$: Movie;
-
   constructor() { }
 
   ngOnInit() {
-    /* this.movie$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.service.getMovieDetails(params.get('id')))
-    )
-    */
   }
 
 }

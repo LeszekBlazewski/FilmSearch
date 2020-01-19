@@ -3,17 +3,19 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MovieSearchFormComponent } from './movie-search/movie-search-form/movie-search-form.component';
+import { MovieListComponent } from './movie-search/movie-list/movie-list.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [MovieSearchFormComponent, MovieListComponent],
   imports: [
     CommonModule,
     SharedModule,
     MaterialModule,
     FlexLayoutModule
   ],
-  exports: [SharedModule]
+  exports: [SharedModule, MovieSearchFormComponent, MovieListComponent]
 })
 export class ComponentsModule { }
