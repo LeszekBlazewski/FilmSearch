@@ -5,13 +5,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material';
+
 
 const materialDependencties = [
   MatToolbarModule,
-  MatIconModule,
-  MatFormFieldModule,
-  MatCardModule,
   MatButtonModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatSelectModule,
+  MatCardModule,
+  MatListModule
 ]
 
 

@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="remove-padding-bottom">
     <mat-card-header>
         <div mat-card-avatar fxLayoutAlign="center center">
             <mat-icon>search</mat-icon>
@@ -10,19 +10,34 @@
             Information about films is provided by <a href="http://www.omdbapi.com/">OMDb API</a>
         </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>
-        <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between">
-            <div>testa</div>
-
-            <div> tesaraseas</div>
-        </div>
-        <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-        </p>
-    </mat-card-content>
-    <mat-card-actions align="end">
-        <button mat-raised-button color='primary'>Search</button>
-    </mat-card-actions>
+    <form [formGroup]="searchForm">
+        <mat-card-content>
+            <div fxLayout="column" fxLayoutGap="20px">
+                <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between">
+                    <mat-form-field>
+                        <input matInput placeholder="Movie title" formControlName="Title">
+                        <mat-error> Title is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Movie type</mat-label>
+                        <mat-select formControlName="Type">
+                            <mat-option>None</mat-option>
+                            <mat-option *ngFor="let movieType of movieTypes" [value]="movieType">
+                                {{movieType}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row">
+                    <mat-form-field fxFlexFill>
+                        <input matInput placeholder="Movie release year" formControlName="Year">
+                        <mat-error> Specify valid year in range 1900 - 2099</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button color='primary' (click)='submitForm()'>Search</button>
+        </mat-card-actions>
+    </form>
 </mat-card>

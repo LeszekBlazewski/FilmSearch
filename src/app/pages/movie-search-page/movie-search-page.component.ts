@@ -11,5 +11,4 @@ export class MovieSearchPageComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

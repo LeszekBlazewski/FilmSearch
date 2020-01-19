@@ -5,6 +5,7 @@ import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MovieSearchFormComponent } from './movie-search/movie-search-form/movie-search-form.component';
 import { MovieListComponent } from './movie-search/movie-list/movie-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,7 +15,8 @@ import { MovieListComponent } from './movie-search/movie-list/movie-list.compone
     CommonModule,
     SharedModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   exports: [SharedModule, MovieSearchFormComponent, MovieListComponent]
 })

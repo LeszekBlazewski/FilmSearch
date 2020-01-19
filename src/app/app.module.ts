@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PagesModule } from './pages/pages.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { MovieService } from './services/movie.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    PagesModule
+    PagesModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MovieService,
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

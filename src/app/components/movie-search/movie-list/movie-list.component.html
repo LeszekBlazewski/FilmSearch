@@ -1,1 +1,23 @@
-<p>movie-list works!</p>
+<ng-container [ngSwitch]="shouldDisplayList">
+    <ng-container *ngSwitchCase="false">
+        <h3>Fill in the above form to get information about given films !</h3>
+    </ng-container>
+    <ng-container *ngSwitchCase="true">
+        <ng-container *ngIf="(moviesData$ | async) as movieResponse; else loading">
+            <mat-list *ngIf="movieResponse.Response == 'True'; else noMoviesFound">
+                <mat-list-item *ngFor="let movie of movieResponse.Search">
+                    {{movie | json}}
+                </mat-list-item>
+            </mat-list>
+        </ng-container>
+    </ng-container>
+</ng-container>
+
+<ng-template #loading>
+    Loading ...
+</ng-template>
+
+
+<ng-template #noMoviesFound>
+    No movies found for specified params !
+</ng-template>
