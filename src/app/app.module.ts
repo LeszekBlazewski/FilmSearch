@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieService } from './services/movie.service';
+import { MovieSearchService } from './services/movie-search.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { MovieService } from './services/movie.service';
     PagesModule,
     HttpClientModule
   ],
-  providers: [MovieService,
+  providers: [MovieService, MovieSearchService,
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
   ],
   bootstrap: [AppComponent]

@@ -1,51 +1,41 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { MovieSearchParams } from '../models/movieSearchParams';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { MovieSearchResponse } from '../models/movieSearchResponse';
+import { MovieDetails } from '../models/movieDetails';
+import { MovieSearchService } from './movie-search.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
 
-  private movieSearchParams$: BehaviorSubject<MovieSearchParams> = new BehaviorSubject(undefined);
+  private movieDetails$: BehaviorSubject<MovieDetails> = new BehaviorSubject(undefined);
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+    private movieSearchService: MovieSearchService) {
   }
 
-  getMovies(): Observable<MovieSearchResponse> {
-    const params = this.constructHttpParams();
-    return this.http.get<MovieSearchResponse>(environment.omdApiUrl, { params });
-  }
-
-
-  private constructHttpParams(): HttpParams {
-
-    const movieSearchParams = this.movieSearchParams$.value;
+  getMovieDetailsFromApi(imdbId: string): Observable<MovieDetails> {
 
     let params = new HttpParams()
-      .set('s', movieSearchParams.Title)     // title is necessary
-      .set('apikey', environment.apiKey);    // api key is always required
+      .set('apikey', environment.apiKey)    // api key is always required
+      .set('i', imdbId)
 
-    if (movieSearchParams.Type)
-      params = params.set('type', movieSearchParams.Type);
+    // TODO implement this
+    // this.movieSearchService.getLatestSearchParams().pipe(
+    //   take(1)
+    // ).subscribe(searchParams => params = params.set('plot', searchParams.Plot))
 
-    if (movieSearchParams.Year)
-      params = params.set('y', movieSearchParams.Year);
-
-    if (movieSearchParams.page)
-      params = params.set('page', movieSearchParams.page.toString());
-
-    return params;
+    return this.http.get<MovieDetails>(environment.omdApiUrl, { params });
   }
 
-  emitNextSearchParam(nextParams: MovieSearchParams) {
-    this.movieSearchParams$.next(nextParams);
+  emitNextMovieDetails(movieDetails: MovieDetails) {
+    this.movieDetails$.next(movieDetails);
   }
 
-  getLatestSearchParams(): Observable<MovieSearchParams> {
-    return this.movieSearchParams$.asObservable();
+  getMovieDetails(): Observable<MovieDetails> {
+    return this.movieDetails$.asObservable();
   }
 }

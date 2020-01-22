@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MovieType } from 'src/app/models/enums/movieTypeEnum';
 import { MovieSearchParams } from 'src/app/models/movieSearchParams';
-import { MovieService } from 'src/app/services/movie.service';
+import { MovieSearchService } from 'src/app/services/movie-search.service';
 
 @Component({
   selector: 'app-movie-search-form',
@@ -16,7 +16,7 @@ export class MovieSearchFormComponent implements OnInit {
   movieTypes = Object.values(MovieType);
 
   constructor(private formBuilder: FormBuilder,
-    private movieService: MovieService) { }
+    private movieSearchService: MovieSearchService) { }
 
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
@@ -33,6 +33,6 @@ export class MovieSearchFormComponent implements OnInit {
 
     const searchParams: MovieSearchParams = this.searchForm.value;
 
-    this.movieService.emitNextSearchParam(searchParams);
+    this.movieSearchService.emitNextSearchParam(searchParams);
   }
 }

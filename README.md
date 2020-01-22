@@ -10,7 +10,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 * Reactive forms
 
-* Animate.css -> CURRENTLY NOD USED !
+* ngx-infinite-scroll
+
+* Animate.css -> CURRENTLY NOT USED !
 
 ## Development server
 

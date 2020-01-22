@@ -1,6 +1,6 @@
 import { MovieSearchParams } from './movieSearchParams';
 
 export interface MovieSearchData extends MovieSearchParams {
-    imdbId: string,
+    imdbID: string,
     Poster: string;
 }
