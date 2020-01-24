@@ -1,5 +1,11 @@
 <div *ngIf="movieDetails$ | async as details" class="animated lightSpeedIn">
     <h2>{{details.Title}}</h2>
     <p>Released in {{details.Year}}</p>
-    <img [src]="details.Poster !== 'N/A' ? details.Poster:'assets/no-movie-icon.png'" width="120px">
+    <div class="image-container">
+        <img [src]="details.Poster !== 'N/A' ? details.Poster:'assets/no-movie-icon.png'">
+        <h4>
+            <span>IMD: {{details.Ratings[0].Value}} Rotten: {{details.Ratings[1].Value}} Metacritic:
+                {{details.Ratings[2].Value}}</span>
+        </h4>
+    </div>
 </div>
