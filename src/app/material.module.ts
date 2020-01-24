@@ -9,7 +9,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatChipsModule } from '@angular/material/chips';
 
 
 const materialDependencties = [
@@ -22,7 +21,6 @@ const materialDependencties = [
   MatCardModule,
   MatListModule,
   MatProgressSpinnerModule,
-  MatChipsModule
 ]
 
 

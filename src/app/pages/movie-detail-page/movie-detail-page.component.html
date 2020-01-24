@@ -1,1 +1,11 @@
-<p>movie-detail-page works!</p>
+<ng-container *ngIf="movie$ | async as movie">
+    <div gdGap="20px" gdColumns="repeat(2, [col] auto)" gdRows="repeat(4, [row] auto)">
+        <div gdColumn="1" gdRow="1 / span 2">
+            <img [src]="movie.Poster !== 'N/A' ? movie.Poster:'assets/no-movie-icon.png'">
+        </div>
+        <div gdColumn="2" gdRow="1">Title</div>
+        <div gdColumn="2" gdRow="2">Director</div>
+        <div gdColumn="1 / span 2" gdRow="3">Cast</div>
+        <div gdColumn="1 / span 2" gdRow="4">Rating</div>
+    </div>
+</ng-container>

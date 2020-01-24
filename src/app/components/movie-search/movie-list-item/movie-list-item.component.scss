@@ -2,42 +2,11 @@ $image-size: 330px;
 
 img {
     width: $image-size;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.05);
+    }
 }
-
-// .image-container { 
-//     position: relative; 
-
-//     h1 { 
-//         position: absolute; 
-//         margin: 0;
-//         span {
-//             color: white; 
-//             font: bold 24px/45px Helvetica, Sans-Serif; 
-//             letter-spacing: -1px;  
-//             background: rgb(0, 0, 0);
-//             background: rgba(0, 0, 0, 0.7);
-//             padding: 10px; 
-//         }
-
-//         &.first-rating {
-//             bottom: 0;
-//             left: 0%;
-//         }
-
-//         &.second-rating {
-//             bottom: 0;
-//             left: 40%;
-//         }
-
-//         &.third-rating {
-//             bottom: 0;
-//             left: 60%;
-//         }
-//      }
-
-//  }
-
-
 
  .image-container { 
     position: relative; 
@@ -52,7 +21,6 @@ img {
         background-attachment: fixed;
         overflow: hidden;
         margin:0;
-        margin-bottom: 5px;
 
 
         &::before {

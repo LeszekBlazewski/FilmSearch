@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieDetails } from 'src/app/models/movieDetails';
+import { MovieService } from 'src/app/services/movie.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-movie-detail-page',
@@ -7,16 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieDetailPageComponent implements OnInit {
 
-  //movie$: Movie;
+  movie$: Observable<MovieDetails>;
 
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-    /* this.movie$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.service.getMovieDetails(params.get('id')))
-    )
-    */
+    this.movie$ = this.movieService.getMovieDetails();
   }
 
 }

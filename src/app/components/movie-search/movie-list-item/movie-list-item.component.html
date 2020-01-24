@@ -2,10 +2,29 @@
     <h2>{{details.Title}}</h2>
     <p>Released in {{details.Year}}</p>
     <div class="image-container">
-        <img [src]="details.Poster !== 'N/A' ? details.Poster:'assets/no-movie-icon.png'">
-        <h4>
-            <span>IMD: {{details.Ratings[0].Value}} Rotten: {{details.Ratings[1].Value}} Metacritic:
-                {{details.Ratings[2].Value}}</span>
+        <img [src]="details.Poster !== 'N/A' ? details.Poster:'assets/no-movie-icon.png'"
+            (click)="openMovieDetails(details)">
+        <h4 [style.marginBottom.px]="details.Poster == 'N/A' ? '-5': '5'">
+            <ng-container [ngSwitch]="details.Ratings.length">
+                <ng-container *ngSwitchCase="3">
+                    <span>
+                        IMD: {{details.Ratings[0].Value}} Rotten: {{details.Ratings[1].Value}} Metacritic:
+                        {{details.Ratings[2].Value}}
+                    </span>
+                </ng-container>
+                <ng-container *ngSwitchCase="2">
+                    <span>
+                        IMD: {{details.Ratings[0].Value}} Rotten: {{details.Ratings[1].Value}}
+                    </span>
+                </ng-container>
+                <ng-container *ngSwitchCase="1">
+                    <span>
+                        IMD: {{details.Ratings[0].Value}}
+                    </span>
+                </ng-container>
+                <ng-container *ngSwitchCase="1">
+                </ng-container>
+            </ng-container>
         </h4>
     </div>
 </div>

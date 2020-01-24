@@ -5,6 +5,7 @@ import { MaterialModule } from 'src/app/material.module';
 import { FooterComponent } from './footer/footer.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
   imports: [
     CommonModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule
   ],
   exports: [NavbarComponent, FooterComponent, LoadingSpinnerComponent]
 })
