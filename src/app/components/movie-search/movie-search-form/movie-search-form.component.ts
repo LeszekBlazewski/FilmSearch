@@ -20,7 +20,7 @@ export class MovieSearchFormComponent implements OnInit {
 
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
-      Title: ['', Validators.required],
+      Title: ['Batman', Validators.required],
       Type: [''],
       Year: ['', Validators.pattern(/^(19|20)\d{2}$/)]
     });
