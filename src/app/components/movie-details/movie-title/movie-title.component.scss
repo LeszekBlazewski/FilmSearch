@@ -1,0 +1,14 @@
+
+div  {
+    p {
+        &:nth-child(1) {
+            min-width: 163px;
+        }
+    }
+}
+
+
+.justify-plot {
+    text-align: justify;
+    text-justify: inter-word;
+}

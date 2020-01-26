@@ -1,12 +1,23 @@
 <ng-container *ngIf="movie$ | async as movie">
-    <div gdGap="20px" gdColumns="repeat(2, [col] auto)" gdRows="repeat(5, [row] auto)">
+    <div gdGap="20px" gdColumns="repeat(2, [col] auto)" gdRows="repeat(5, [row] auto)" class="grid-margins">
         <div gdColumn="1" gdRow="1 / span 2">
-            <img [src]="movie.Poster !== 'N/A' ? movie.Poster:'assets/no-movie-icon.png'">
+            <div class="img-hover-zoom" fxFill>
+                <img [src]="movie.Poster !== 'N/A' ? movie.Poster:'assets/no-movie-icon.png'"
+                    style="height: 100%; width: 100%;">
+            </div>
         </div>
-        <div gdColumn="2" gdRow="1">Title</div>
-        <div gdColumn="2" gdRow="2">Director</div>
-        <div gdColumn="1 / span 2" gdRow="3">Cast</div>
-        <div gdColumn="1 / span 2" gdRow="4">Rating</div>
+        <div gdColumn="2" gdRow="1">
+            <app-movie-title [details]="movie"></app-movie-title>
+        </div>
+        <div gdColumn="2" gdRow="2">
+            <app-movie-director [director]="movie.Director"></app-movie-director>
+        </div>
+        <div gdColumn="1 / span 2" gdRow="3">
+            <app-movie-cast [movieCast]="movie.Actors"></app-movie-cast>
+        </div>
+        <div gdColumn="1 / span 2" gdRow="4">
+            <app-movie-ratings></app-movie-ratings>
+        </div>
         <div gdColumn="1 / span 2" gdRow="5">
             <button mat-raised-button color="primary" (click)="this.location.back()">Go back</button>
         </div>

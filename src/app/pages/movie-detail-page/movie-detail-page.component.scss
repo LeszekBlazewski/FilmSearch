@@ -1,0 +1,26 @@
+
+$grid-top-margin: 20px;
+
+$grid-left-margin:20px;
+
+$grtid-righg-margin:20px;
+
+.grid-margins {
+    margin-left: $grid-left-margin;
+    margin-top: $grid-top-margin;
+    margin-right: $grtid-righg-margin;
+}
+
+ .img-hover-zoom {
+    overflow: hidden;
+    img {
+        transition: transform .5s ease;
+        display: block;
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.5);
+        }
+    }
+ }

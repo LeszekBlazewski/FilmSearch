@@ -17,7 +17,11 @@ export class MovieDetailPageComponent implements OnInit {
     public location: Location) { }
 
   ngOnInit() {
-    this.movie$ = this.movieService.getMovieDetails();
+    // noramlly this 
+    //this.movie$ = this.movieService.getMovieDetails();
+
+    // moq
+    this.movie$ = this.movieService.getMovieDetailsFromApi('tt0120338', 'full');
   }
 
 }
