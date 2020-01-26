@@ -13,7 +13,7 @@ import { MovieTitleComponent } from './movie-details/movie-title/movie-title.com
 import { MovieDirectorComponent } from './movie-details/movie-director/movie-director.component';
 import { MovieCastComponent } from './movie-details/movie-cast/movie-cast.component';
 import { MovieRatingsComponent } from './movie-details/movie-ratings/movie-ratings.component';
-
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 
 @NgModule({
@@ -24,7 +24,8 @@ import { MovieRatingsComponent } from './movie-details/movie-ratings/movie-ratin
     MaterialModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    NgxUsefulSwiperModule
   ],
   exports: [SharedModule, MovieSearchFormComponent, MovieListComponent, MovieListItemComponent, MovieTitleComponent, MovieDirectorComponent, MovieCastComponent, MovieRatingsComponent]
 })

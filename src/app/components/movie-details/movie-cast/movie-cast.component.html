@@ -1,8 +1,17 @@
-<div fxLayout="column" fxLayoutGap="5px">
+<div fxLayout="column" fxLayoutGap="20px">
     <mat-card>
         <h2>Actors</h2>
     </mat-card>
-    <div *ngFor="let actor of actors">
-        <p>{{actor}}</p>
-    </div>
+    <swiper class="swiper-container" fxFlex="auto" [config]="config">
+        <div class="swiper-wrapper">
+            <div *ngFor="let actor of actors" class="swiper-slide">
+                <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+                    <img src="assets/actor-carousel.svg" style="width: 100px; margin-top: 5px;" class="selectDisable">
+                    <p class="selectDisable">{{actor}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </swiper>
 </div>
