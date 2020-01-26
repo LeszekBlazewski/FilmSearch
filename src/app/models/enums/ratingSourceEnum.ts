@@ -1,4 +1,4 @@
-export enum RatingSource {
+export enum RatingSourceEnum {
     IMD = 'Internet Movie Database',
     RottenTomatoes = 'Rotten Tomatoes',
     Metacritic = 'Metacritic',

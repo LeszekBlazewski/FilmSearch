@@ -1,8 +1,8 @@
-import { MovieType } from './enums/movieTypeEnum';
+import { MovieTypeEnum } from './enums/movieTypeEnum';
 
 export interface MovieSearchParams {
     Title: string,
     Year: string
-    Type: MovieType,
+    Type: MovieTypeEnum,
     Plot: string,
 }

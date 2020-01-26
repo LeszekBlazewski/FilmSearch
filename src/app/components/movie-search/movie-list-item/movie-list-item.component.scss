@@ -3,14 +3,12 @@ $image-size: 330px;
 img {
     width: $image-size;
     cursor: pointer;
-    &:hover {
-        transform: scale(1.05);
-    }
+    display: block;
 }
 
  .image-container { 
-    position: relative; 
-
+    position: relative;
+    width: $image-size;
     h4 { 
         position: absolute;
         bottom: 0;
@@ -21,18 +19,6 @@ img {
         background-attachment: fixed;
         overflow: hidden;
         margin:0;
-
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: -20px;
-            left: 0;
-            width: $image-size;
-            height: 100%;
-            background: inherit;
-            background-attachment: fixed;
-        }
 
         &:after {
             content: "";
@@ -50,4 +36,23 @@ img {
             z-index: 1;
         }
      }
+ }
+
+ .img-hover-zoom {
+    overflow: hidden;
+    img {
+        transition: transform .5s ease;
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.5);
+        }
+    }
+ }
+
+
+ .flex-size-adjust {
+    max-width: $image-size; 
+    min-width: $image-size;
  }

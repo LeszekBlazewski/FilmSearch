@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MovieType } from 'src/app/models/enums/movieTypeEnum';
+import { MovieTypeEnum } from 'src/app/models/enums/movieTypeEnum';
 import { MovieSearchParams } from 'src/app/models/movieSearchParams';
 import { MovieSearchService } from 'src/app/services/movie-search.service';
 
@@ -13,7 +13,7 @@ export class MovieSearchFormComponent implements OnInit {
 
   searchForm: FormGroup;
 
-  movieTypes = Object.values(MovieType);
+  movieTypes = Object.values(MovieTypeEnum);
 
   constructor(private formBuilder: FormBuilder,
     private movieSearchService: MovieSearchService) { }
@@ -22,6 +22,7 @@ export class MovieSearchFormComponent implements OnInit {
     this.searchForm = this.formBuilder.group({
       Title: ['Batman', Validators.required],
       Type: [''],
+      Plot: ['short'],
       Year: ['', Validators.pattern(/^(19|20)\d{2}$/)]
     });
   }

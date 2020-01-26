@@ -3,7 +3,7 @@
         <h3>Fill in the above form to get information about given films !</h3>
     </ng-container>
     <ng-container *ngSwitchCase="true">
-        <ng-container *ngIf="(moviesData$ | async) as moviesResponse; else loading">
+        <ng-container *ngIf="(moviesData$ | async) as moviesResponse">
             <ng-container
                 *ngTemplateOutlet="moviesResponse.Response == 'True' ? displayList : errorResponse; context: {response: moviesResponse}">
             </ng-container>
@@ -20,7 +20,7 @@
 
     <div fxLayout="column" fxLayoutGap="10px" fxFill>
 
-        <div *ngIf="totalMoviesFound">
+        <div *ngIf="totalMoviesFound" class="animated zoomIn">
             <h1>Search results</h1>
             <mat-divider></mat-divider>
             <div>

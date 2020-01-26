@@ -14,11 +14,12 @@ export class MovieService {
   constructor(private http: HttpClient) {
   }
 
-  getMovieDetailsFromApi(imdbId: string): Observable<MovieDetails> {
+  getMovieDetailsFromApi(imdbId: string, plotLength: string): Observable<MovieDetails> {
 
     let params = new HttpParams()
       .set('apikey', environment.apiKey)    // api key is always required
       .set('i', imdbId)
+      .set('plot', plotLength);
 
     return this.http.get<MovieDetails>(environment.omdApiUrl, { params });
   }

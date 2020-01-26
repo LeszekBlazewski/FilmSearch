@@ -10,6 +10,8 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 import { HttpClientModule } from '@angular/common/http';
 import { MovieService } from './services/movie.service';
 import { MovieSearchService } from './services/movie-search.service';
+import { RouteReuseStrategy } from '@angular/router';
+import { MovieReuseStrategy } from './movieReuseStrategy';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { MovieSearchService } from './services/movie-search.service';
   ],
   providers: [MovieService, MovieSearchService,
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
+    { provide: RouteReuseStrategy, useClass: MovieReuseStrategy },
   ],
   bootstrap: [AppComponent]
 })

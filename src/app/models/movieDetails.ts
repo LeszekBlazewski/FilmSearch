@@ -1,5 +1,5 @@
 import { Rating } from './rating';
-import { MovieType } from './enums/movieTypeEnum';
+import { MovieTypeEnum } from './enums/movieTypeEnum';
 
 export interface MovieDetails {
     Title: string;
@@ -21,7 +21,7 @@ export interface MovieDetails {
     imdbRating: number,
     imdbVotes: string,
     imdbID: string,
-    Type: MovieType,
+    Type: MovieTypeEnum,
     DVD: string,
     BoxOffice: string,
     Production: string,

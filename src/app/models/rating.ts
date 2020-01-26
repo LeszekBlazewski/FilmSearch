@@ -1,6 +1,6 @@
-import { RatingSource } from './enums/RatingSource';
+import { RatingSourceEnum } from './enums/ratingSourceEnum';
 
 export interface Rating {
-    Source: RatingSource,
+    Source: RatingSourceEnum,
     Value: string
 }

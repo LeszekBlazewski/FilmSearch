@@ -7,11 +7,12 @@ import { MovieDetailPageComponent } from './pages/movie-detail-page/movie-detail
 const routes: Routes = [
   {
     path: '',
-    component: MovieSearchPageComponent
+    component: MovieSearchPageComponent,
+    data: { reuseRoute: true }
   },
   {
     path: 'movie/:id',
-    component: MovieDetailPageComponent
+    component: MovieDetailPageComponent,
   },
   {
     path: '**',
@@ -20,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

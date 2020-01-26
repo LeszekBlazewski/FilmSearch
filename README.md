@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Used technologies
 
-* FxLayout
+* Angular FxLayout
 
 * Angular material
 
@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 * ngx-infinite-scroll
 
-* Animate.css -> CURRENTLY NOT USED !
+* Animate.css
 
 ## Development server
 

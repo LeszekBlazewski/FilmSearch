@@ -28,10 +28,17 @@
                         </mat-select>
                     </mat-form-field>
                 </div>
-                <div fxLayout="row">
-                    <mat-form-field fxFlexFill>
+                <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between">
+                    <mat-form-field>
                         <input matInput placeholder="Movie release year" formControlName="Year">
                         <mat-error> Specify valid year in range 1900 - 2099</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Plot type</mat-label>
+                        <mat-select formControlName="Plot">
+                            <mat-option value="short">short</mat-option>
+                            <mat-option value="full">long</mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </div>
             </div>
