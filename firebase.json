@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/FilmSearch",
+    "public": "dist/",
     "ignore": [
       "firebase.json",
       "**/.*",
