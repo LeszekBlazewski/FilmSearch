@@ -1,6 +1,6 @@
 # FilmSearch [![Build Status](https://dev.azure.com/blazewskileszek/FilmSearch/_apis/build/status/LeszekBlazewski.FilmSearch?branchName=master)](https://dev.azure.com/blazewskileszek/FilmSearch/_build/latest?definitionId=16&branchName=master)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+Sample SPA application written in Angular which communicates with [OMDb API](http://www.omdbapi.com/).
 
 ## Used technologies
 
@@ -18,26 +18,52 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 * ng-starrating
 
-## Development server
+* CI/CD -> Azure DevOps with firebase deployment
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Overview
 
-## Code scaffolding
+Application queries the OMDb API in order to retrieve information about requested movies. No one likes pagination these days so infinity scroll was implemented in order to display bigger search results. I have also added component caching mechanism on specific routes in order to prevent fetching the full list when user navigates back and forth between the list and movie details. Also micro reusable components management was introduced to make the app easily maintainable. Application does not fully support responsive design but most of the components are built upon flex layouts and CSS grids so adjustments can be made in order to make it fully usable on smaller devices.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Live demo
 
-## Build
+Application is currently deployed right here: [Live demo](https://filmsearch-efb50.firebaseapp.com)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+:warning::warning::warning: TO MAKE THE LIVE PRIEVIEW WORK YOU NEED TO ALLOW MIXED CONTENT FOR APP PAGE (because OMDb API does not use https :disappointed:)
 
-## Running unit tests
+### Instructions to allow mixed content on Firefox
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Navigate to https://filmsearch-efb50.firebaseapp.com
 
-## Running end-to-end tests
+2. Try to search movies by clicking on search button
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+3. If nothing pops up click on the padlock near site URL on the top
 
-## Further help
+4. Click disable protection for now
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Allow mixed content](/images/mixed-content.png)
+
+5. Enjoy searching :grin:
+
+## Running locally
+
+### Clone the repo
+
+```bash
+git clone https://github.com/LeszekBlazewski/FilmSearch.git
+```
+
+### Install all dependencies
+
+```
+npm install
+```
+
+### Serve and have fun
+
+```
+ng serve
+```
+
+## Continuous  integration and delivery
+
+Continuous  integration is set up to build and deploy new version to firebase each time a new commit in the repo occurs. You can check out how the process was set up here: [Azure DevOps project](https://dev.azure.com/blazewskileszek/FilmSearch) (pipelines and releases :relaxed:)
