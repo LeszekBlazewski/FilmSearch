@@ -1,0 +1,11 @@
+div  {
+    div {
+        &:nth-child(1) {
+            min-width: 178px;
+        }
+    }
+}
+
+star-rating {
+    margin-top: -27px;
+}

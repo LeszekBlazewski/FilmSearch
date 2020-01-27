@@ -14,7 +14,7 @@ import { MovieDirectorComponent } from './movie-details/movie-director/movie-dir
 import { MovieCastComponent } from './movie-details/movie-cast/movie-cast.component';
 import { MovieRatingsComponent } from './movie-details/movie-ratings/movie-ratings.component';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
-
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [MovieSearchFormComponent, MovieListComponent, MovieListItemComponent, MovieTitleComponent, MovieDirectorComponent, MovieCastComponent, MovieRatingsComponent],
@@ -25,7 +25,8 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     FlexLayoutModule,
     ReactiveFormsModule,
     InfiniteScrollModule,
-    NgxUsefulSwiperModule
+    NgxUsefulSwiperModule,
+    RatingModule
   ],
   exports: [SharedModule, MovieSearchFormComponent, MovieListComponent, MovieListItemComponent, MovieTitleComponent, MovieDirectorComponent, MovieCastComponent, MovieRatingsComponent]
 })

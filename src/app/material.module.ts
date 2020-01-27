@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 const materialDependencties = [
   MatToolbarModule,
@@ -21,6 +21,7 @@ const materialDependencties = [
   MatCardModule,
   MatListModule,
   MatProgressSpinnerModule,
+  MatProgressBarModule
 ]
 
 

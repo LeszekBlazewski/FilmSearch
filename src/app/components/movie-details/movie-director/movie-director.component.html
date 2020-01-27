@@ -2,6 +2,11 @@
     <mat-card>
         <h2>Director</h2>
     </mat-card>
-    <img src="assets/actor.svg" style="width: 100px;">
-    <div>{{director}}</div>
+    <div fxLayout="row" fxLayoutGap="10px">
+        <div *ngFor="let director of directors">
+            <img src="assets/actor.svg" style="width: 100px;">
+            <div style="text-align: center;">{{director}}</div>
+        </div>
+    </div>
+
 </div>

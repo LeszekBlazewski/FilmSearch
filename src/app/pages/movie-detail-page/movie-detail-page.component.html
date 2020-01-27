@@ -16,10 +16,11 @@
             <app-movie-cast [movieCast]="movie.Actors"></app-movie-cast>
         </div>
         <div gdColumn="1 / span 2" gdRow="4">
-            <app-movie-ratings></app-movie-ratings>
+            <app-movie-ratings [ratings]="movie.Ratings"></app-movie-ratings>
         </div>
-        <div gdColumn="1 / span 2" gdRow="5">
-            <button mat-raised-button color="primary" (click)="this.location.back()">Go back</button>
+        <div gdColumn="2" gdRow="5" fxLayoutAlign="end center">
+            <button mat-raised-button color="primary" (click)="this.location.back()" style="margin-bottom: 10px;">Go
+                back</button>
         </div>
     </div>
 </ng-container>

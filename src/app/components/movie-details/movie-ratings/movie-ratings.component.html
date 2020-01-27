@@ -1,1 +1,25 @@
-<p>movie-ratings works!</p>
+<div fxLayout="column" fxLayoutGap="40px">
+    <mat-card>
+        <h2>Ratings</h2>
+    </mat-card>
+    <ng-container *ngIf="ratings; else noRatings">
+        <div fxLayout="row" fxLayoutGap="40px">
+            <div>{{ratings[0]?.Source}}</div>
+            <star-rating value="{{ratings[0].NumericValue}}" totalstars="5" checkedcolor="gold" uncheckedcolor="black"
+                size="50px" readonly="true">
+            </star-rating>
+            <div>{{ratings[0]?.Value}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="40px" *ngFor="let rating of ratings | slice:1">
+            <div>{{rating?.Source}}:</div>
+            <mat-progress-bar [color]="'primary'" [value]="rating.NumericValue" style="height: 20px; max-width: 250px;">
+            </mat-progress-bar>
+            <div>{{rating?.Value}}</div>
+        </div>
+    </ng-container>
+</div>
+
+
+<ng-template #noRatings>
+    <p>No rating available</p>
+</ng-template>
