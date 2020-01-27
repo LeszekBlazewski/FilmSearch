@@ -56,3 +56,8 @@ img {
     max-width: $image-size; 
     min-width: $image-size;
  }
+
+ .justify-plot {
+    text-align: justify;
+    text-justify: inter-word;
+}
