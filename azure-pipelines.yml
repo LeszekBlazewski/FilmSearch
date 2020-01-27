@@ -24,11 +24,11 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'firebase.json'
-    ArtifactName: 'dropFirebase'
+    ArtifactName: 'drop'
     publishLocation: 'Container'
 
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'dist/FilmSearch'
-    ArtifactName: 'dropFront'
+    ArtifactName: 'drop/dist'
     publishLocation: 'Container'
