@@ -28,7 +28,7 @@ Application queries the OMDb API in order to retrieve information about requeste
 
 Application is currently deployed right here: [Live demo](https://filmsearch-efb50.firebaseapp.com)
 
-:warning::warning::warning: TO MAKE THE LIVE PRIEVIEW WORK YOU NEED TO ALLOW MIXED CONTENT FOR APP PAGE (because OMDb API does not use https :disappointed:)
+:warning::warning::warning: TO MAKE THE LIVE PRIEVIEW WORK YOU NEED TO ALLOW MIXED CONTENT FOR APP PAGE :warning::warning::warning: (because OMDb API does not use https :disappointed:) 
 
 ### Instructions to allow mixed content on Firefox
 
