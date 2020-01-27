@@ -2,7 +2,7 @@
     <mat-card>
         <h2>Ratings</h2>
     </mat-card>
-    <ng-container *ngIf="ratings; else noRatings">
+    <ng-container *ngIf="ratings.length > 0; else noRatings">
         <div fxLayout="row" fxLayoutGap="40px">
             <div>{{ratings[0]?.Source}}</div>
             <star-rating value="{{ratings[0].NumericValue}}" totalstars="5" checkedcolor="gold" uncheckedcolor="black"

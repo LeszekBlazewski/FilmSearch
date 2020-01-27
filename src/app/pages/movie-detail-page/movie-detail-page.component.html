@@ -1,5 +1,5 @@
 <ng-container *ngIf="movie$ | async as movie">
-    <div gdGap="20px" gdColumns="repeat(2, [col] auto)" gdRows="repeat(5, [row] auto)" class="grid-margins">
+    <div gdGap="20px" gdColumns="320px auto" gdRows="repeat(5, [row] 100%)" class="grid-margins">
         <div gdColumn="1" gdRow="1 / span 2">
             <div class="img-hover-zoom" fxFill>
                 <img [src]="movie.Poster !== 'N/A' ? movie.Poster:'assets/no-movie-icon.png'"
