@@ -43,7 +43,3 @@ npm install
 ```
 ng serve
 ```
-
-## Continuous  integration and delivery
-
-Continuous  integration is set up to build and deploy new version to firebase each time a new commit in the repo occurs. You can check out how the process was set up here: [Azure DevOps project](https://dev.azure.com/blazewskileszek/FilmSearch) (pipelines and releases :relaxed:)
