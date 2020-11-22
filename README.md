@@ -24,30 +24,6 @@ Sample SPA application written in Angular which communicates with [OMDb API](htt
 
 Application queries the OMDb API in order to retrieve information about requested movies. No one likes pagination these days so infinity scroll was implemented in order to display bigger search results. I have also added component caching mechanism on specific routes in order to prevent fetching the full list when user navigates back and forth between the list and movie details. Also micro reusable components management was introduced to make the app easily maintainable. Application does not fully support responsive design but most of the components are built upon flex layouts and CSS grids so adjustments can be made in order to make it fully usable on smaller devices.
 
-## Live demo
-
-Application is currently deployed right here: [Live demo](https://filmsearch-efb50.firebaseapp.com)
-
-:warning::warning::warning:
-
-TO MAKE THE LIVE PRIEVIEW WORK YOU NEED TO ALLOW MIXED CONTENT FOR APP PAGE (because OMDb API does not use https :disappointed:)
-
-:warning::warning::warning:
-
-### Instructions to allow mixed content on Firefox
-
-1. Navigate to https://filmsearch-efb50.firebaseapp.com
-
-2. Try to search movies by clicking on search button
-
-3. If nothing pops up click on the padlock near site URL on the top
-
-4. Click disable protection for now
-
-![Allow mixed content](/images/mixed-content.png)
-
-5. Enjoy searching :grin:
-
 ## Running locally
 
 ### Clone the repo
